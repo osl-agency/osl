@@ -3,323 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSL - More Advanced Influencer-Marketing</title>
+    <title>OSL - Connecting Influencers and Brands</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            border-bottom: 1.2px solid rgb(60, 59, 59)
+        h1 {
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
         }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: rgb(0, 0, 0);
+        #titlep{
+            color: #222222;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #373737;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: rgba(0, 0, 0,0.4);
+        .dotted-grid {
+            background-image: radial-gradient(circle, #000000 1.8px, transparent 1.8px);
+            background-size: 32px 32px;
+            opacity: 0.25;
             
         }
 
-        .menu-icon {
-            background: none;
-            border: none;
-            color: #000000;
-            cursor: pointer;
-            padding: 0.5rem;
+        .header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
-        main {
-            display: flex;
-            min-height: calc(100vh - 180px);
-            padding: 2rem;
-        }
-
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .gradient-text {
-            font-size: 4rem;
-            font-weight: bold;
-            background: linear-gradient(to right, #3d389e, #00f7ff, #00aeff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #323232;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: none;
-            border: 2.2px solid rgb(0, 0, 0);
-            color: rgb(0, 0, 0);
-            font-weight: bolder;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 0.375rem;
-            font-weight: 550;
-            transition:  0.5s ease-in-out;
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(to right, #272283, #018cff, #000000);
-            transition:  0.55s ease-in-out;
-            color: #ffffff;
-            border: #ffffff;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-            object-fit: cover;
-        }
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            border-top: 1px solid #333;
-            background-color: #ffffff;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-content a {
-            color: #151515;
-            text-decoration: none;
-        }
-
-        @media (max-width: 1024px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-image {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links a {
-                display: none;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .gradient-text {
-                font-size: 3rem;
-            }
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -200px;
-            width: 200px;
+        #headerimg{
+            width: 37px;
             height: 100%;
-            background: linear-gradient(135deg, #3d389e, #00aeff);
-            box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
-            transition: right 0.36s ease-in-out;
-            z-index: 1000;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: smaller;
         }
 
-        .side-menu.open {
-            right: 0;
+        .nav-link {
+            color: #4B5563;
+            transition: color 0.3s;
         }
 
-        .close-menu {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .nav-link:hover {
+            color: #000000;
+        }
+
+        #signbtn {
+            background-color: #000000f3;
             color: #ffffff;
-            transition: transform 0.3s ease;
+            border-radius: 26px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.27);
+           transition: 0.34s ease-in-out;
         }
 
-        .close-menu:hover {
-            transform: rotate(90deg);
-        }
-
-        .side-menu a {
+        #signbtn:hover {
+            background-color: #000000f3;
             color: #ffffff;
-            border: 2px solid #ffffff;
-            border-radius: 9px;
-            padding: 9px 9px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.5s ease;
-            position: relative;
-            padding-left: 15px;
-            font-size: smaller;
+            border-radius: 26px;
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.56);
+            transition: 0.34s ease-in-out;
+           
         }
 
-        .side-menu a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 6px;
-            height: 6px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.35s ease;
+        .start-btn {
+            background-color: #000000f3;
+            font-weight: bolder;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: 0.334s ease-in-out;
+            border-radius: 6px;
         }
 
-        .side-menu a:hover {
-            padding-left: 20px;
-            transition: 0.5s ease-in-out;
+        .start-btn:hover {
+            background-color: #10215ff3;
+            color: #ffffff;
+            border-radius: 26px;
+            font-weight: 800;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+            text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.189), -1px -2px 4px rgba(0, 0, 0, 0.2);
+            padding-top: 1px;
+            padding-bottom: 1px;
+            transition: 0.334s ease-in-out;
         }
 
-        .side-menu a:hover::before {
-            opacity: 1;
+        #howbtn {
+            background: white;
+            transition: 0.335s ease-in-out;
+            color: #000000;
+            font-weight: bolder;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.36);
+            border: 3px solid black;
+            border-radius: 26px;
+        }
+
+        #howbtn:hover {
+            background: white;
+            color: #000000;
+            font-weight: 700;
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.18);
+            border: 3px solid rgb(30, 30, 30);
+            transition: 0.335s ease-in-out;
+        }
+
+        .feature-block {
+            background: linear-gradient(to bottom, #ffffff, #ffffff);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .join-btn {
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+            transition: background-color 0.3s;
+        }
+
+        .join-btn:hover {
+            background-color: #1F2937;
+        }
+
+        .join-btn-outline {
+            background-color: transparent;
+            color: #000000;
+            font-weight: 600;
+            border: 1px solid #000000;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .join-btn-outline:hover {
+            background-color: #000000;
+            color: #ffffff;
         }
     </style>
 </head>
-<body>
-    <nav>
-        <a href="/" class="logo">OSL / Modern Marketing</a> 
-        <div class="nav-links">
-            <a href="index2.html#">Try OSL Agency</a>
-            <a href="unternehmen1.html#">For enterpreneurs</a>
-            <a href="newpage.html#">For influencer</a>
-            <a href="#">FAQ</a>
-            <button class="menu-icon" aria-label="Open menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="4" y1="12" x2="20" y2="12"></line>
-                    <line x1="4" y1="6" x2="20" y2="6"></line>
-                    <line x1="4" y1="18" x2="20" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
-    <div class="side-menu" aria-hidden="true">
-        <button class="close-menu" aria-label="Close menu">&times;</button>
-        <a href="index2.html#">Try OSL Agency</a>
-        <a href="unternehmen1.html#">For enterpreneurs</a>
-        <a href="newpage.html#">For influencer</a>
-        <a href="#">FAQ</a>
-    </div>
-
-    <main>
-        <div class="content-wrapper">
-            <div class="hero-content">
-                <div>
-                    <h1 class="gradient-text">OSL</h1>
-                    <h2 class="hero-title">
-                        Supercharge your Skill<br>
-                        and productivity
-                    </h2>
-                    <p class="hero-subtitle">
-                        Find perfect Social-Media Marketing Partners on your budget<br>
-                       Social Media Marketing Forum
-                    </p>
-                </div>
-                <a href="index2.html" class="cta-button">Start Now --></a>
+<body class="bg-white text-black antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="header flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <a href="/" class="flex items-center gap-3">
+                    <img id="headerimg" src="--removebg-preview.png" alt="OSL Logo" class="w-8 h-8">
+                    <span class="font-medium text-black">OSL</span>
+                </a>
             </div>
-           
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="nav-link text-sm">For Influencers</a>
+                <a href="#" class="nav-link text-sm">For Brands</a>
+                <a href="#" class="nav-link text-sm">How It Works</a>
+                <a href="#" class="nav-link text-sm">Pricing</a>
+                <a href="#" class="nav-link text-sm">Contact</a>
+            </nav>
+            <button id="signbtn" class="sign-up-btn text-white px-4 py-1.5 rounded">Sign Up</button>
         </div>
+    </header>
+
+    <main class="min-h-screen bg-white">
+        <section class="relative pt-32 pb-16 overflow-hidden bg-white">
+            <div class="absolute inset-0 dotted-grid"></div>
+            <div class="relative z-10 max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-black">
+                        Connect Influencers and Brands<br>
+                        Effortlessly
+                    </h1>
+                    <p id="titlep" class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                        OSL streamlines influencer marketing partnerships. Save time and find the perfect match based on pricing, niche, and follower count - all in one place.
+                    </p>
+                    <div class="flex gap-4 justify-center">
+                        <button id="howbtn" class="how-btn px-4 py-2 rounded flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            How It Works
+                        </button>
+                        <button class="start-btn text-white px-4 py-2 rounded">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-black to-black/60">
+                    Revolutionizing Influencer Marketing
+                </h2>
+                <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+                    OSL brings influencers and brands together, making it easier than ever to create successful partnerships. Our platform saves time and ensures the perfect match for both parties.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-block">
+                        <h3 class="text-xl font-semibold mb-2">Smart Matching</h3>
+                        <p class="text-gray-600">Our algorithm pairs influencers and brands based on niche, audience, and budget requirements.</p>
+                    </div>
+                    <div class="feature-block">
+                        <h3 class="text-xl font-semibold mb-2">Time-Saving Filters</h3>
+                        <p class="text-gray-600">Quickly find potential partners using advanced filters for pricing, follower count, and engagement rates.</p>
+                    </div>
+                    <div class="feature-block">
+                        <h3 class="text-xl font-semibold mb-2">Secure Transactions</h3>
+                        <p class="text-gray-600">Manage contracts, payments, and campaign tracking all within our secure platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Seamless Integration for Any Campaign</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                    Whether you're an up-and-coming influencer or a global brand, OSL adapts to your needs and helps you create successful marketing partnerships.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 mb-12">
+                    <img src="https://via.placeholder.com/48?text=Instagram" alt="Instagram" class="rounded-lg">
+                    <img src="https://via.placeholder.com/48?text=YouTube" alt="YouTube" class="rounded-lg">
+                    <img src="https://via.placeholder.com/48?text=TikTok" alt="TikTok" class="rounded-lg">
+                    <img src="https://via.placeholder.com/48?text=Twitter" alt="Twitter" class="rounded-lg">
+                    <img src="https://via.placeholder.com/48?text=Facebook" alt="Facebook" class="rounded-lg">
+                </div>
+                <div class="flex gap-4 justify-center">
+                    <button class="join-btn">Join as Influencer</button>
+                    <button class="join-btn-outline">Join as Brand</button>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <a href="#">OSL /  Startups & Influencer Connection </a>
-            <a href="#">Privacy & Terms</a>
+    <footer class="bg-gray-100 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-black font-semibold mb-4">For Influencers</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-black">Find Opportunities</a></li>
+                        <li><a href="#" class="hover:text-black">Manage Campaigns</a></li>
+                        <li><a href="#" class="hover:text-black">Analytics</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-black font-semibold mb-4">For Brands</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-black">Find Influencers</a></li>
+                        <li><a href="#" class="hover:text-black">Campaign Management</a></li>
+                        <li><a href="#" class="hover:text-black">ROI Tracking</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-black font-semibold mb-4">Company</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-black">About Us</a></li>
+                        <li><a href="#" class="hover:text-black">Careers</a></li>
+                        <li><a href="#" class="hover:text-black">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-black font-semibold mb-4">Legal</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><a href="#" class="hover:text-black">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-black">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-black">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center text-gray-600">
+                <p>&copy; 2023 OSL - Influencer Marketing Platform. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const sideMenu = document.querySelector('.side-menu');
-        const closeMenu = document.querySelector('.close-menu');
-
-        menuIcon.addEventListener('click', () => {
-            sideMenu.classList.add('open');
-            sideMenu.setAttribute('aria-hidden', 'false');
-        });
-
-        closeMenu.addEventListener('click', () => {
-            sideMenu.classList.remove('open');
-            sideMenu.setAttribute('aria-hidden', 'true');
-        });
-
-        // Close the menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!sideMenu.contains(event.target) && !menuIcon.contains(event.target)) {
-                sideMenu.classList.remove('open');
-                sideMenu.setAttribute('aria-hidden', 'true');
-            }
-        });
-    </script>
 </body>
 </html>
-

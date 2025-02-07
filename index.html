@@ -64,20 +64,24 @@
            
         }
 
-        .start-btn {
-            background-color: #000000f3;
-            font-weight: bolder;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: 0.334s ease-in-out;
-            border-radius: 6px;
-        }
-
-        .start-btn:hover {
+        #startbtn {
             background-color: #10215ff3;
             color: #ffffff;
             border-radius: 26px;
             font-weight: 800;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.149), -1px -2px 4px rgba(0, 0, 0, 0.2);
+            padding-top: 1px;
+            padding-bottom: 1px;
+            transition: 0.334s ease-in-out;
+        }
+
+        #startbtn:hover {
+            background-color: #10215ff3;
+            color: #ffffff;
+            border-radius: 26px;
+            font-weight: 800;
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.6);
             text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.189), -1px -2px 4px rgba(0, 0, 0, 0.2);
             padding-top: 1px;
             padding-bottom: 1px;
@@ -182,7 +186,7 @@
                             </svg>
                             How It Works
                         </button>
-                        <button class="start-btn text-white px-4 py-2 rounded">
+                        <button id="startbtn" class="start-btn text-white px-4 py-1 rounded">
                             Get Started
                         </button>
                     </div>

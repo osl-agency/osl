@@ -144,6 +144,40 @@
             background-color: #000000;
             color: #ffffff;
         }
+
+
+        @media (max-width: 735px) {
+            #title1{
+                font-weight:  950;
+            }
+
+
+            #headernav{
+                display: flex;
+                font-size: 4px;
+            }
+
+            #notnavmobile{
+                font-size: 6px;
+                display: none;
+            }
+
+            #navheader{
+                font-size: 11px;
+                display: flex;
+                
+            }
+
+            #signbtn{
+                font-size: smaller;
+            }
+
+            
+
+        }
+
+        
+
     </style>
 </head>
 <body class="bg-white text-black antialiased">
@@ -155,12 +189,12 @@
                     <span class="font-medium text-black">OSL</span>
                 </a>
             </div>
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#" class="nav-link text-sm">For Influencers</a>
-                <a href="#" class="nav-link text-sm">For Brands</a>
-                <a href="#" class="nav-link text-sm">How It Works</a>
-                <a href="#" class="nav-link text-sm">Pricing</a>
-                <a href="#" class="nav-link text-sm">Contact</a>
+            <nav id="headernav" class="hidden md:flex items-center gap-8">
+                <a href="#" id="navheader" class="nav-link text-sm">For Influencers</a>
+                <a href="#" id="navheader"  class="nav-link text-sm">For Brands</a>
+                <a href="#"   id="notnavmobile" class="nav-link text-sm">How It Works</a>
+                <a href="#"  id="notnavmobile" class="nav-link text-sm">Pricing</a>
+                <a href="#" id="navheader"  class="nav-link text-sm">Contact</a>
             </nav>
             <button id="signbtn" class="sign-up-btn text-white px-4 py-1.5 rounded">Sign Up</button>
         </div>
@@ -171,7 +205,7 @@
             <div class="absolute inset-0 dotted-grid"></div>
             <div class="relative z-10 max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-black">
+                    <h1 id="title1" class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-black">
                         Connect Influencers and Brands<br>
                         Effortlessly
                     </h1>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - OSL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1 {
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+        }
+
+        .dotted-grid {
+            background-image: radial-gradient(circle, #000000 1.8px, transparent 1.8px);
+            background-size: 32px 32px;
+            opacity: 0.25;
+        }
+
+        .header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-link {
+            color: #4B5563;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #000000;
+        }
+
+        .btn {
+            background-color: #000000f3;
+            color: #ffffff;
+            border-radius: 26px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.27);
+            transition: 0.34s ease-in-out;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .btn:hover {
+            background-color: #000000f3;
+            color: #ffffff;
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.56);
+            transition: 0.34s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-black antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <div class="header flex items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <a href="/" class="flex items-center gap-3">
+                    <img id="headerimg" src="-__1_-removebg-preview.png" alt="OSL Logo" class="w-8 h-8">
+                    <span class="font-medium text-black">OSL</span>
+                </a>
+            </div>
+            <nav id="headernav" class="hidden md:flex items-center gap-8">
+                <a href="#" id="navheader" class="nav-link text-sm">For Influencers</a>
+                <a href="#" id="navheader" class="nav-link text-sm">For Brands</a>
+                <a href="#" id="notnavmobile" class="nav-link text-sm">How It Works</a>
+                <a href="#" id="notnavmobile" class="nav-link text-sm">Pricing</a>
+                <a href="#" id="navheader" class="nav-link text-sm">Contact</a>
+            </nav>
+            <button id="signbtn" class="btn">Sign Up</button>
+        </div>
+    </header>
+
+    <main class="min-h-screen bg-white flex items-center justify-center">
+        <section class="relative pt-32 pb-16 overflow-hidden bg-white text-center">
+            <div class="absolute inset-0 dotted-grid"></div>
+            <div class="relative z-10 max-w-6xl mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-black">
+                    Page Not Found
+                </h1>
+                <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                    Sorry, the page you are looking for is currently under construction. Please check back later.
+                </p>
+                <a href="index.html#" class="btn">Go Back Home</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
